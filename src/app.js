@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ["http://localhost:5173","endearing-lebkuchen-5dc349.netlify.app"],
+    origin: ["http://localhost:5173","https://portfolio-gulzar.netlify.app/"],
     credentials: true
 }));
 app.use(express.json());
