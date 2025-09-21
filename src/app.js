@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ["http://localhost:5173","https://portfolio2-jade-tau.vercel.app"],
+    origin: ["http://localhost:5173","endearing-lebkuchen-5dc349.netlify.app"],
     credentials: true
 }));
 app.use(express.json());
