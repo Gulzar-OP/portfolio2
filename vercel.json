@@ -1,0 +1,20 @@
+
+{
+  "version": 2,
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "server.js" }
+  ],
+  "env": {
+    "PORT": "3000",
+    "MONGO_URL": "mongodb+srv://kadirop89:sbgz2917@cluster0.dnpksgr.mongodb.net/?retryWrites=true&w=majority",
+    "JWT_SECRET": "your_jwt_secret_key",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "465",
+    "SMTP_SERVICE": "gmail",
+    "SMTP_MAIL": "gulzarhu80@gmail.com",
+    "SMTP_PASSWORD": "tfsa yryq urtp sycr"
+  }
+}
