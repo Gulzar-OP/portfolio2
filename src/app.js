@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 const blogRoutes = require('./routes/blog.route.js');
 const projectRoutes = require('./routes/project.route.js');
@@ -11,7 +12,7 @@ const sendRoutes = require('./routes/Send.js');
 const app = express();
 
 const allowedOrigins = [
-    "http://localhost:5173",
+    process.env.FRONTEND_URL || "http://localhost:5173",
     // "https://portfolio-gulzar.netlify.app"
 ];
 
