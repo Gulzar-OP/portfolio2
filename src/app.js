@@ -11,24 +11,25 @@ const sendRoutes = require('./routes/Send.js');
 
 const app = express();
 
+// Correct allowed origins including localhost and production frontend
 const allowedOrigins = [
-    process.env.FRONTEND_URL || "http://localhost:5173",
-    // "https://portfolio-gulzar.netlify.app"
+    "http://localhost:5173",
+    "https://portfolio-pink-psi-66.vercel.app"
+    // Add other production frontend URLs if needed
 ];
 
+// Improved CORS middleware for development + production
 app.use(cors({
     origin: function(origin, callback){
-        // allow requests with no origin like Postman
-        if(!origin) return callback(null, true);
+        if(!origin) return callback(null, true); // Allow Postman/no-origin
         if(allowedOrigins.indexOf(origin) === -1){
-            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            const msg = 'CORS policy does not allow access from origin: ' + origin;
             return callback(new Error(msg), false);
         }
         return callback(null, true);
     },
     credentials: true
 }));
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
